@@ -39,7 +39,6 @@ class MinidumpHeader:
 		mh.NumberOfStreams = int.from_bytes(buff.read(4), byteorder = 'little', signed = False)
 		mh.StreamDirectoryRva = int.from_bytes(buff.read(4), byteorder = 'little', signed = False)
 		mh.CheckSum = int.from_bytes(buff.read(4), byteorder = 'little', signed = False)
-		mh.Reserved = int.from_bytes(buff.read(4), byteorder = 'little', signed = False)
 		mh.TimeDateStamp = int.from_bytes(buff.read(4), byteorder = 'little', signed = False)
 		try:
 			mh.Flags = MINIDUMP_TYPE(int.from_bytes(buff.read(4), byteorder = 'little', signed = False))
